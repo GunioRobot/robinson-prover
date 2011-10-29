@@ -17,7 +17,7 @@ public class Substitution {
 		public Terme getTerme() {
 			return t;
 		}
-		
+
 		public Terme getVariable() {
 			return v;
 		}

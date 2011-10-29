@@ -4,7 +4,7 @@ public class Constante extends Ensemble implements Terme {
 	public Constante(String s) {
 		super(s);
 	}
-	
+
 	public Terme[] getTermes() {
 		Terme[] ret = { this };
 		return ret;

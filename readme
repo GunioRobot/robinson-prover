@@ -5,7 +5,7 @@ usage : java adpo.test.Test <formule 0> <formule 1> ... <formule n>
 
 Exemple d'utilisation : java adpo.test.Test "r0()" "r0() OU r1()" "r1()"
 
-[Dans notre exemple, { formule0, NON formule1, formule2 } entreront en 
+[Dans notre exemple, { formule0, NON formule1, formule2 } entreront en
 résolution]
 
 Les classes importantes pour le traitement de l'étape 1 sont :
@@ -23,8 +23,8 @@ pour l'analyse lexicale.
 Pour le moment il n'est pas possible de lire à partir d'un fichier.
 
 La descente des négations est déjà implantée, il manque la remontée des clauses,
-la skolemisation, le traitement des quantifieurs et le système de formel de 
-Robinson. Pour l'instant les Atomes sont des relations vides positives ou 
+la skolemisation, le traitement des quantifieurs et le système de formel de
+Robinson. Pour l'instant les Atomes sont des relations vides positives ou
 négatives.
 
 
@@ -48,7 +48,7 @@ Les classes importantes pour le traitement de l'étape 2 sont :
 	* adpo.resolution.ClauseResolution
 
 Vous pourrez remarquer que nous avons ajouté une méthode simplification() à
-l'interface adpo.formule.Formule, elle permet de simplifier une Formule en 
+l'interface adpo.formule.Formule, elle permet de simplifier une Formule en
 simplifiant les opérations portant sur VRAI et FAUX.
 
 Pour l'instant nous n'avons toujours pas implémenté le programme principal,
@@ -60,8 +60,8 @@ usage: 	java fichierMain -e "<formule>"
 	java fichierMain [-f] <fichier>
 
 Exemples d'utilisation : java adpo.test.TestAnalyse fichier
-			 java adpo.test.TestRobinsonResolution -e "(r1(a) ET 
-			 	r1(x) ET r3(x,b)) OU NON r2(x) OU (NON r3(c,y) 
+			 java adpo.test.TestRobinsonResolution -e "(r1(a) ET
+			 	r1(x) ET r3(x,b)) OU NON r2(x) OU (NON r3(c,y)
 				ET r2(c))"
 			 java adpo.test.Tests -f fichier
 
@@ -88,7 +88,7 @@ La classe Substitution permet de stocker un ensemble de règles de substitutions
 ainsi que de les appliquer à un Atome.
 La classe Unification permet quand à elle d'unifier deux Atomes (si cela est
 possible) en utilisant toutes la méthode conseillée par nos enseignants.
-Les substitutions semblent être faites convenablement, y compris dans les 
+Les substitutions semblent être faites convenablement, y compris dans les
 groupes de termes.
 
 La classe RobinsonResolution est fonctionelle et permet d'appliquer la méthode
@@ -112,9 +112,9 @@ Les classes importantes pour le traitement de l'étape 4 sont :
 	* adpo.formule.Closible
 
 Les classes IlExiste et PourTout nous ont permis d'implémenter les quantifieurs.
-Ces deux classes implémentent l'interface Formule, plus précisément la classe 
+Ces deux classes implémentent l'interface Formule, plus précisément la classe
 abstraite Binaire pour laquelle nous utilisons maintenant la généricité. Ainsi,
-IlExiste et PourTout étendent Binaire<Variable,Formule>, nous en avons profité 
+IlExiste et PourTout étendent Binaire<Variable,Formule>, nous en avons profité
 pour transformer Unaire de la même façon.
 
 On a implémenté la cloture universelle à l'aide de l'interface Closible.

@@ -25,7 +25,7 @@ public class TestUnification {
 		a2.ajouter(new Variable("y"));
 
 		u = new Unification(a1,a2);
-		
+
 		System.out.println(a1 + " " + a2);
 		System.out.println(u.unifier());
 		System.out.println(a1 + " " + a2);

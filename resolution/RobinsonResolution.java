@@ -29,11 +29,11 @@ public class RobinsonResolution extends Resolution {
 			return "[" + a1 + "," + a2 + "] " + sub;
 		}
 	}
-	
+
 	public RobinsonResolution(FormeClausale fc) {
 		super(fc);
 	}
-	
+
 	private int choixSubstitution(LinkedList<Couple> unipos) {
 		int ret;
 		if (unipos.size() <= 0) {
@@ -41,7 +41,7 @@ public class RobinsonResolution extends Resolution {
 				+ " possible entre ces deux règles.");
 			return -1;
 		}
-		System.out.println("-> Liste des substitutions" 
+		System.out.println("-> Liste des substitutions"
 			+ " possibles:");
 		ret = 1;
 		for (Couple c : unipos)
@@ -68,7 +68,7 @@ public class RobinsonResolution extends Resolution {
 			System.out.println("\n---");
 			afficherClauses();
 			choix = lireChoix("<- Numero de la règle à utiliser: ",0,3);
-			if (choix == 0) 
+			if (choix == 0)
 				return ret;
 			else if (choix == 3) {
 				choix = lireChoixClause("<- Première clause sur"
@@ -98,7 +98,7 @@ public class RobinsonResolution extends Resolution {
 					for (Atome a : c2.getAtomes())
 						tmp.getSubstitution().applique(a);
 				}
-				
+
 				c1.ajouter(c2);
 				clauses.remove(c2);
 				if ((c1.estVide()) && (c2.estVide()))
@@ -133,10 +133,10 @@ public class RobinsonResolution extends Resolution {
 
 				if (c1.estVide())
 					clauses.remove(c1);
-			} 
+			}
 
 		}
-		return ret;	
+		return ret;
 	}
 
 	private LinkedList<Couple> regleFacPlus(Clause c) {

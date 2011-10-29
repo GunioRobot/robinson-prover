@@ -26,11 +26,11 @@ public class Non extends UnaireFormule {
 		this.neg = b;
 		fils.nier(!neg);
 	}
-			
+
 	public Formule negation() {
 		/* if (neg) */
 			return fils.negation();
-		/* 
+		/*
 		else
 			return new Non(fils.negation());
 		*/

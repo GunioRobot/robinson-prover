@@ -20,7 +20,7 @@ public class Lexeme {
 		RELATIONS = "[pqr][0-9]*",
 		SEPARATEURS = "\\s";
 
-	public static final int 
+	public static final int
 		ID_EOF = 0,
 		ID_IMPLIQUE = 1,
 		ID_ET = 2,
@@ -38,7 +38,7 @@ public class Lexeme {
 		ID_FONCTIONS = 22,
 		ID_RELATIONS = 23;
 
-	public static int getEnsemble(char c) {	
+	public static int getEnsemble(char c) {
 		String tmp = c + "";
 		if (tmp.matches(Lexeme.VARIABLES))
 			return ID_VARIABLES;
@@ -56,7 +56,7 @@ public class Lexeme {
 		return (c + "").matches(Lexeme.SEPARATEURS);
 	}
 	/* </static> */
-	
+
 	private int type;
 	private String valeur;
 
@@ -77,11 +77,11 @@ public class Lexeme {
 		if (o instanceof Lexeme) {
 			return (((Lexeme)o).type == type)
 				&& (valeur == null ? ((Lexeme)o).valeur == null
-					: valeur.equals(((Lexeme)o).valeur)); 
+					: valeur.equals(((Lexeme)o).valeur));
 		} else
 			return false;
 	}
-	
+
 	public int hashCode() {
 		return valeur.hashCode() + (type*31^valeur.length());
 	}

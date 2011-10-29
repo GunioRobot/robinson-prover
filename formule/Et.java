@@ -32,9 +32,9 @@ public class Et extends BinaireFormule implements OperateurClausal {
 	}
 
 	public Formule negation() {
-		if (neg) 
+		if (neg)
 			return new Ou(fg.negation(),fd.negation());
-		else 
+		else
 			return new Et(fg.negation(),fd.negation());
 	}
 

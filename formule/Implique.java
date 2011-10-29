@@ -31,9 +31,9 @@ public class Implique extends BinaireFormule {
 	}
 
 	public Formule negation() {
-		if (neg) 
+		if (neg)
 			return new Et(fg.negation(),fd.negation());
-		else 
+		else
 			return new Ou(fg.negation(),fd.negation());
 	}
 

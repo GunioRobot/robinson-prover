@@ -18,9 +18,9 @@ public class PourTout extends Binaire<Variable,Formule> {
 	}
 
 	public Formule negation() {
-		if (neg) 
+		if (neg)
 			return new IlExiste(fg,fd.negation());
-		else 
+		else
 			return new PourTout(fg,fd.negation());
 	}
 
@@ -32,7 +32,7 @@ public class PourTout extends Binaire<Variable,Formule> {
 	public String toString() {
 		return "(A" + fg + ")[" + fd + "]";
 	}
-	
+
 	public Formule skolemiser(Collection<Variable> quantifie, Substitution sub) {
 		Formule ret;
 		quantifie.add(fg);

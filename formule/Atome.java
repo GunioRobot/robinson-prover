@@ -45,9 +45,9 @@ public class Atome extends EnsembleTermes implements Formule, Comparable<Atome>,
 	}
 
 	public boolean estOppose(Atome a) {
-		return ((this.equals(a)) && (this.neg != a.neg)); 
+		return ((this.equals(a)) && (this.neg != a.neg));
 	}
-	
+
 	public boolean estEquivalent(Atome a) {
 		return (this.nom == null ? a.getNom() == null
 			: this.nom.equals(a.getNom()))
@@ -75,7 +75,7 @@ public class Atome extends EnsembleTermes implements Formule, Comparable<Atome>,
 				((Variable) t).setNom(t.getNom() + sufix);
 		}
 	}
-	
+
 	public void clotureUniverselle(Collection<Variable> quantifie, Collection<Variable> tout) {
 		for (Terme t : termes) {
 			if (t instanceof Variable)

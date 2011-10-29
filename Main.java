@@ -68,7 +68,7 @@ public class Main {
 
 		checkNull(al,"analyse lexicale");
 		checkNull(as,"analyse syntaxique creation");
-		
+
 		f = as.analyser();
 		checkNull(f,"analyse syntaxique");
 		System.out.println("Formule : " + f);

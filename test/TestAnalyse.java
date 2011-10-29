@@ -17,14 +17,14 @@ public class TestAnalyse {
 		i = 0;
 		do {
 			ret = al.analyser();
-			System.out.println("[Appel " + i++ + "] <id:" + ret 
+			System.out.println("[Appel " + i++ + "] <id:" + ret
 			+ " | lex:" + al.tableAnalyse.getLexeme(ret) + ">");
 		} while ((ret >= 0) && (al.tableAnalyse.getLexeme(ret).getType()
 			!= Lexeme.ID_EOF));
 		if (ret == -2)
 			System.out.println("ERREUR");
 		else
-			System.out.println("SUCCES");	
+			System.out.println("SUCCES");
 
 
 		/* Tests AnalyseSyntaxique */

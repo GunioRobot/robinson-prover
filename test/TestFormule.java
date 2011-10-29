@@ -18,7 +18,7 @@ public class TestFormule {
 
 		/* Tests simplification */
 		System.out.println("---Simplification---");
-		Formule fs = f.simplification(); 
+		Formule fs = f.simplification();
 		System.out.println(fs);
 
 		/* Tests negation */

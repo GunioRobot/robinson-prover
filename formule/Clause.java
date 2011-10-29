@@ -23,7 +23,7 @@ public class Clause {
 	}
 
 	public void ajouter(Formule f) {
-		/* comme la formule doit etre niee a cette etape : 
+		/* comme la formule doit etre niee a cette etape :
 		 * si les operateurs Binaires ne sont pas valides,
 		 * on ne fait rien
 		 * les verifications sont faites dans FormeClausale */
@@ -45,7 +45,7 @@ public class Clause {
 		}
 		return this;
 	}
-	
+
 	public Clause ajouter(Clause c) {
 		anegatifs.addAll(c.anegatifs);
 		apositifs.addAll(c.apositifs);
@@ -142,7 +142,7 @@ public class Clause {
 	public List<Atome> getOpposeIntersection(Clause c) {
 		LinkedList<Atome> ret = new LinkedList<Atome>();
 		Atome tmpa;
-		
+
 		for (Atome a: c.apositifs) {
 			tmpa = getOppose(a);
 			if (tmpa != null)
@@ -158,7 +158,7 @@ public class Clause {
 	}
 
 	public Atome getOppose(Atome a) {
-		LinkedList<Atome> oppliste = 
+		LinkedList<Atome> oppliste =
 			(a.estNegatif() ? apositifs : anegatifs);
 		int ind = oppliste.indexOf(a);
 		if (ind >= 0)

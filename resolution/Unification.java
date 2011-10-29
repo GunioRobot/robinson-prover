@@ -7,7 +7,7 @@ public class Unification {
 	private class Couple {
 		protected Terme tg, td;
 		protected Substitution.Couple c;
-		
+
 		public Couple(Terme t1, Terme t2) {
 			this.tg = t1;
 			this.td = t2;
@@ -33,7 +33,7 @@ public class Unification {
 		public Terme getTerme() {
 			return (c == null ? null : c.getTerme());
 		}
-		
+
 		public Terme getVariable() {
 			return (c == null ? null : c.getVariable());
 		}
@@ -45,7 +45,7 @@ public class Unification {
 		public void setTermeG(Terme t) {
 			tg = t;
 		}
-		
+
 		public void setTermeD(Terme t) {
 			td = t;
 		}
@@ -60,7 +60,7 @@ public class Unification {
 	}
 
 	public static class UnificationEchecException extends Exception { }
-	
+
 	private Atome a1, a2;
 	private Substitution sub;
 	private LinkedList<Couple> couples;
@@ -97,7 +97,7 @@ public class Unification {
 
 	private void miseAJourSubstitution() {
 		miseAJourCouples();
-	
+
 		for (Couple c : couples) {
 			if (c.getCouple() != null)
 				sub.ajouter(c.getCouple());
@@ -230,7 +230,7 @@ public class Unification {
 				/* substitution(td,tg) */
 			}
 		}
-		
+
 	}
 
 	/* retourne vrai si il y a eu un changement */
@@ -246,7 +246,7 @@ public class Unification {
 			&& (tg instanceof Variable)) {
 				if (((Fonction)td).contient(tg) && !td.equals(tg))
 					throw new UnificationEchecException();
-				
+
 				else {
 					/* retirer(c); */
 					supprl.add(c);
@@ -286,7 +286,7 @@ public class Unification {
 		for (int i = 0; i < ft.length; i++) {
 			if (ft[i] instanceof Fonction)
 				substituer((Fonction)ft[i],v,t);
-			else if (ft[i].equals(v)) 
+			else if (ft[i].equals(v))
 				f.setTerme(i,t);
 		}
 	}
@@ -295,7 +295,7 @@ public class Unification {
 		StringBuffer sb = new StringBuffer("Unification: [");
 		String tmp;
 		for (Couple c: couples) {
-			tmp = c.getVariable() + "=" + c.getTerme() + " {" 
+			tmp = c.getVariable() + "=" + c.getTerme() + " {"
 				+ c.getTermeG() + "=" + c.getTermeD() + "},";
 			sb.append(tmp);
 		}

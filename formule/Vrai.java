@@ -25,7 +25,7 @@ public class Vrai extends Connecteur implements Simplifiable {
 		else
 			return this;
 	}
-	
+
 	public Formule skolemiser(Collection<Variable> quantifie, Substitution sub) {
 		return this;
 	}

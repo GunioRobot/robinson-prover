@@ -32,9 +32,9 @@ public class Ou extends BinaireFormule implements OperateurClausal {
 	}
 
 	public Formule negation() {
-		if (neg) 
+		if (neg)
 			return new Et(fg.negation(),fd.negation());
-		else 
+		else
 			return new Ou(fg.negation(),fd.negation());
 	}
 
@@ -46,7 +46,7 @@ public class Ou extends BinaireFormule implements OperateurClausal {
 				).getComposition(((OperateurClausal)fd
 					).formeClausale());
 		}
-		
+
 		if ((fg instanceof Atome) && (fd instanceof Atome)) {
 			if (((Atome)fg).estOppose((Atome)fd))
 				return ret;
@@ -54,7 +54,7 @@ public class Ou extends BinaireFormule implements OperateurClausal {
 				return ret.ajouter(new Clause(this));
 		}
 
-		if (fg instanceof Atome) 
+		if (fg instanceof Atome)
 			ret.ajouter(new Clause(fg));
 
 		if (fd instanceof Atome)

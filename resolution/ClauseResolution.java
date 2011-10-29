@@ -16,7 +16,7 @@ public class ClauseResolution extends Resolution {
 
 		Clause c1 = null, c2 = null,ret = null;
 		int choix;
-		
+
 		afficherSysteme();
 		while ((!(ret instanceof ClauseVide)) && (clauses.size() > 1)) {
 			afficherClauses();
@@ -27,10 +27,10 @@ public class ClauseResolution extends Resolution {
 				choix = lireChoixClause("<-Numero de la seconde"
 				    + "clause à faire rentrer en résolution: ");
 			}
-			
+
 			if (choix == 0)
 				return ret;
-			
+
 			c2 = clauses.get(choix-1);
 
 			if (regleRes(c1,c2))

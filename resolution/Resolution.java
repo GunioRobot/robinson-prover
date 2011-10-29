@@ -9,11 +9,11 @@ import java.io.IOException;
 
 public abstract class Resolution {
 	protected LinkedList<Clause> clauses;
-	
+
 	public Resolution(FormeClausale fc) {
 		clauses = new LinkedList<Clause>(fc.getClauses());
 	}
-	
+
 	public abstract Clause resoudre();
 	public abstract void afficherSysteme();
 
@@ -23,7 +23,7 @@ public abstract class Resolution {
 			System.out.println((i+1) + "| " + clauses.get(i));
 		System.out.println("(0 pour arreter)\n");
 	}
-	
+
 	protected int lireChoix(String message, int binf, int bsup) {
 		BufferedReader in = new BufferedReader(
 			new InputStreamReader(System.in));

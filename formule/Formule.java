@@ -5,7 +5,7 @@ import java.util.Collection;
 
 public interface Formule extends Closible {
 	/* simplification, suppression des FAUX et VRAI */
-	/* ATTENTION : la simplificaiton ne dois pas être appliquée sur 
+	/* ATTENTION : la simplificaiton ne dois pas être appliquée sur
 	 * une formule niee */
 	public Formule simplification();
 	/* descente des negations */

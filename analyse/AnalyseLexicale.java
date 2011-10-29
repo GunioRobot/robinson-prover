@@ -10,7 +10,7 @@ public abstract class AnalyseLexicale {
 		pos = 0;
 		tableAnalyse = new TableLexeme();
 	}
-	
+
 	public int getPos() {
 		return pos;
 	}
@@ -25,7 +25,7 @@ public abstract class AnalyseLexicale {
 	public abstract char getExprCarSuivant();
 	public abstract int getExprTaille();
 
-	private final int 
+	private final int
 		ET_ERREUR = -2,
 		ET_SUCCES = -1,
 		ET_DEBUT = 0,
@@ -68,7 +68,7 @@ public abstract class AnalyseLexicale {
 					continue;
 				}
 			} else {
-				if (ptr >= lex.length()) 
+				if (ptr >= lex.length())
 					etat = ET_SUCCES;
 				else
 					etat = ET_ERREUR;
@@ -158,7 +158,7 @@ public abstract class AnalyseLexicale {
 						etat = ET_DIGITITERE;
 						id = Lexeme.ID_RELATIONS;
 						break;
-					default:		
+					default:
 						etat = ET_ERREUR;
 						break;
 					}
@@ -166,7 +166,7 @@ public abstract class AnalyseLexicale {
 				}
 				break;
 			case ET_CAR0_E:
-				if (((pos + 1) < getExprTaille()) 
+				if (((pos + 1) < getExprTaille())
 				&& (getExprCarSuivant()
 				 == Lexeme.ET.charAt(1))) {
 					lex = Lexeme.ET;

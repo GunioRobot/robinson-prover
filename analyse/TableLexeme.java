@@ -51,5 +51,5 @@ public class TableLexeme {
 		else
 			table.put(lex,new Integer((ret = compteur++)));
 		return ret;
-	}	
+	}
 }

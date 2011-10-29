@@ -18,9 +18,9 @@ public class IlExiste extends Binaire<Variable,Formule> {
 	}
 
 	public Formule negation() {
-		if (neg) 
+		if (neg)
 			return new PourTout(fg,fd.negation());
-		else 
+		else
 			return new IlExiste(fg,fd.negation());
 	}
 
@@ -28,7 +28,7 @@ public class IlExiste extends Binaire<Variable,Formule> {
 		quantifie.add(fg);
 		fd.clotureUniverselle(quantifie,tout);
 	}
-	
+
 	public Formule skolemiser(Collection<Variable> quantifie, Substitution sub) {
 		Formule ret;
 		Substitution.Couple couple;
@@ -38,7 +38,7 @@ public class IlExiste extends Binaire<Variable,Formule> {
 		for (Variable v : quantifie)
 			fonct.ajouter(v);
 		couple = new Substitution.Couple(fg,fonct);
-		
+
 		sub.ajouter(couple);
 		ret = fd.skolemiser(quantifie,sub);
 		sub.retirer(couple);

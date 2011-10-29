@@ -28,7 +28,7 @@ public abstract class AnalyseSyntaxique {
 		if (ret)
 			lexCour = anaLex.getLexeme(id);
 		return ret;
-	}	
+	}
 
 	public Formule analyser() {
 		erreur = false;
@@ -41,7 +41,7 @@ public abstract class AnalyseSyntaxique {
 
 		if ((erreur) || (lexCour.getType() != Lexeme.ID_EOF) || (f == null))
 			return null;
-		else 
+		else
 			return f;
 	}
 
@@ -65,7 +65,7 @@ public abstract class AnalyseSyntaxique {
 		}
 		return ret;
 	}
-	
+
 	private Formule anaFormule() {
 		if (!erreur) {
 			switch (lexCour.getType()) {
@@ -183,7 +183,7 @@ public abstract class AnalyseSyntaxique {
 		}
 		return null;
 	}
-		
+
 	private Formule anaFacteur() {
 		if (!erreur) {
 			switch (lexCour.getType()) {
@@ -312,7 +312,7 @@ public abstract class AnalyseSyntaxique {
 			case Lexeme.ID_FONCTIONS:
 				nom = ana(Lexeme.ID_FONCTIONS);
 				ana(Lexeme.ID_PARENTHESE_OUVRANTE);
-				EnsembleTermes et = 
+				EnsembleTermes et =
 					anaListeTermes(new Fonction(nom));
 				ana(Lexeme.ID_PARENTHESE_FERMANTE);
 				if (et instanceof Fonction)

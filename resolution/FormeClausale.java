@@ -33,7 +33,7 @@ public class FormeClausale {
 
 		/* simplification de la formule */
 		f = f.simplification();
-		
+
 		/* cloture universelle */
 		quantifie = new LinkedList<Variable>();
 		tout = new LinkedList<Variable>();
@@ -68,7 +68,7 @@ public class FormeClausale {
 			i++;
 		}
 	}
-	
+
 	public void ajouter(FormeClausale fc) {
 		this.clauses.addAll(fc.clauses);
 	}
